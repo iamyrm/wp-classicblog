@@ -3,7 +3,7 @@
       <?php for ($counter = 1; $counter < 3; $counter++): ?>
          <div class="column lg-6">
             <?php if (has_nav_menu("footer_menu_$counter")): ?>
-               <h4>Menu <?php echo $counter; ?></h4>
+               <h4><?php echo ($counter === 1) ? esc_html(get_theme_mod('setting_site_details6')) : esc_html(get_theme_mod('setting_site_details7')) ?></h4>
                <?php
                wp_nav_menu(array(
                   "theme_location" => "footer_menu_$counter",
