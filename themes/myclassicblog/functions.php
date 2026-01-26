@@ -2,6 +2,7 @@
 require 'inc/site_functions.php';
 require 'inc/menu_navwalker.php';
 require 'inc/customizer.php';
+require 'inc/subscriber/fn_subscription.php';
 
 add_filter('the_title', 'ya_myclassicblog_title');
 function ya_myclassicblog_title($title)

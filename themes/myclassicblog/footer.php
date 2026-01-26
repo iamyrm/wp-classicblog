@@ -1,7 +1,12 @@
  <!-- # site-footer ================================================== -->
  <footer id="colophon" class="s-footer">
 
-<?php get_template_part('parts/subscription') ?>
+    <?php
+      if (!is_page('unsubscribe')) {
+         get_template_part('parts/subscription');
+      }
+      ?>
+
 
     <div class="row s-footer__main">
        <div class="column lg-5 md-6 tab-12 s-footer__about">
@@ -9,7 +14,7 @@
           <p><?php echo esc_html(get_theme_mod('setting_site_details1')) ?></p>
        </div>
 
-      <?php get_template_part('parts/navbar','footer'); ?>
+       <?php get_template_part('parts/navbar', 'footer'); ?>
     </div>
 
     <?php

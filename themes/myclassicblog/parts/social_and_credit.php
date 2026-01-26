@@ -55,7 +55,8 @@
    <div class="column lg-5 md-6 tab-12">
       <div class="ss-copyright">
          <span>© <?php echo esc_html(bloginfo('name')) . " " . date('Y'); ?></span>
-         <span>Developed by <a href="https://github.com/iamyrm">Yyagya</a></span>
+         <span><a target="_blank" href="https://github.com/iamyrm/wp-classicblog.git">Code</a></span>
+         <span><a target="_blank" href="https://github.com/iamyrm">Yyagya❣️</a></span>
       </div>
    </div>
 

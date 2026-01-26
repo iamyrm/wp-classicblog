@@ -57,4 +57,10 @@ function ya_header_footer_codes()
    // Footer codes
    wp_enqueue_script('ya_plugins', get_template_directory_uri() . '/assets/js/plugins.js', array(), SITE_VERSION, true);
    wp_enqueue_script('ya_main', get_template_directory_uri() . '/assets/js/main.js', array(), SITE_VERSION, true);
+
+   wp_enqueue_script('subscription-ajax', get_template_directory_uri() . '/assets/js/subscription.js', array('jquery'), '1.0', true);
+    wp_localize_script('subscription-ajax', 'subscription_ajax', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('subscribe_ajax_nonce')
+    ));
 }
