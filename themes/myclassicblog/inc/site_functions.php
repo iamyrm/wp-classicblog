@@ -1,0 +1,57 @@
+<?php
+
+// Defining constants
+define('SITE_VERSION', wp_get_theme()->get('Version'));
+
+// Theme setups
+add_action('after_setup_theme', 'ya_myclassicblog_setup');
+function ya_myclassicblog_setup()
+{
+   add_theme_support('title-tag');
+   add_theme_support('post-thumbnails');
+   add_theme_support('custom-logo');
+   add_theme_support('html5', array('search-form', 'comment-list', 'comment-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets'));
+   add_theme_support('responsive-embeds');
+   add_theme_support('align-wide');
+   add_theme_support('wp-block-styles');
+   add_theme_support('editor-styles');
+   add_editor_style('editor-style.css');
+   add_theme_support('appearance-tools');
+   add_theme_support('woocommerce');
+   global $content_width;
+   if (!isset($content_width)) {
+      $content_width = 1920;
+   }
+   register_nav_menus(array('header_menu' => esc_html__('Main Menu', 'ya_myclassicblog')));
+}
+
+// Adding header meta tag codes
+add_action('wp_head', 'add_head_meta_codes');
+function add_head_meta_codes()
+{
+?>
+   <meta charset="<?php bloginfo('charset'); ?>">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+   </script>
+   <link rel="manifest" href="site.webmanifest">
+<?php
+}
+
+// Adding header and footer CSS and JS
+add_action('wp_enqueue_scripts', 'ya_header_footer_codes');
+function ya_header_footer_codes()
+{
+   // Header Codes
+   wp_enqueue_style('ya_myclassicblog-style', get_stylesheet_uri());
+   wp_enqueue_script('jquery');
+   wp_enqueue_style('ya_vendor_css', get_template_directory_uri() . '/assets/css/vendor.css', array(), SITE_VERSION);
+   wp_enqueue_style('ya_site_style_css', get_template_directory_uri() . '/assets/css/styles.css', array(), SITE_VERSION);
+
+   // Footer codes
+   wp_enqueue_script('ya_plugins', get_template_directory_uri() . '/assets/js/plugins.js', array(), SITE_VERSION, true);
+   wp_enqueue_script('ya_main', get_template_directory_uri() . '/assets/js/main.js', array(), SITE_VERSION, true);
+}

@@ -4,7 +4,9 @@ PRD.md
 !/.srv/custom.ini
 /plugins/akismet
 /plugins/hello.php
+/plugins/wp-dummy-content-generator/*
 /themes/twentytwentytwo
 /themes/twentytwentythree
 /themes/twentytwentyfour
 /themes/twentytwentyfive
+/themes/myclassicblog/html_template/*
