@@ -9,7 +9,8 @@ function ya_myclassicblog_setup()
 {
    add_theme_support('title-tag');
    add_theme_support('post-thumbnails');
-   add_theme_support('custom-logo');
+   // add_theme_support('custom-logo');
+   remove_theme_support('custom-logo');
    add_theme_support('html5', array('search-form', 'comment-list', 'comment-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets'));
    add_theme_support('responsive-embeds');
    add_theme_support('align-wide');
@@ -23,6 +24,8 @@ function ya_myclassicblog_setup()
       $content_width = 1920;
    }
    register_nav_menus(array('header_menu' => esc_html__('Main Menu', 'ya_myclassicblog')));
+   register_nav_menus(array('footer_menu_1' => esc_html__('Footer Menu 1', 'ya_myclassicblog')));
+   register_nav_menus(array('footer_menu_2' => esc_html__('Footer Menu 2', 'ya_myclassicblog')));
 }
 
 // Adding header meta tag codes

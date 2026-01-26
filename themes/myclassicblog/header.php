@@ -22,7 +22,7 @@
          </div>
 
          <?php
-         get_template_part('parts/navbar');
+         get_template_part('parts/navbar', 'header');
          get_template_part('parts/site_search');
          ?>
       </header>
