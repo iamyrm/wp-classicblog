@@ -18,9 +18,13 @@ function ya_classicblog($wp_customize)
     5 => Pinterest link
     6 => Footer Menu 1
     7 => Footer Menu 2
+    8 => Address
+    9 => Website
+    10 => Email
+    11 => Phone
     */
 
-   for ($i = 1; $i <= 7; $i++) {
+   for ($i = 1; $i <= 11; $i++) {
       $labels = array(
          '1' => 'Site Description',
          '2' => 'Facebook link',
@@ -28,7 +32,11 @@ function ya_classicblog($wp_customize)
          '4' => 'Instagram link',
          '5' => 'Pinterest link',
          '6' => 'Footer Menu 1',
-         '7' => 'Footer Menu 2'
+         '7' => 'Footer Menu 2',
+         '8' => 'Address',
+         '9' => 'Website',
+         '10' => 'Email',
+         '11' => 'Phone'
       );
 
       $label = $labels[$i];
