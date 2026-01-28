@@ -19,6 +19,9 @@
                $post_id = get_the_ID();
                $categories = get_the_category($post_id);
                $category_name = !empty($categories) ? $categories[0]->name : 'Uncategorized';
+               $category_link = !empty($categories)
+                  ? get_category_link($categories[0]->term_id)
+                  : '#';
                $author_name = get_the_author_meta('display_name', get_the_author_meta('ID'));
                $post_link = get_permalink($post_id);
                $post_title = get_the_title($post_id);
@@ -46,7 +49,7 @@
                      <div class="entry__header">
                         <div class="entry__meta">
                            <span class="cat-links">
-                              <a href="<?php echo esc_url(get_category_link($categories[0]->term_id ?? 0)); ?>">
+                              <a href="<?php echo esc_url($category_link); ?>">
                                  <?php echo esc_html($category_name); ?>
                               </a>
                            </span>

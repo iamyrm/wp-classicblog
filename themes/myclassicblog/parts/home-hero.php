@@ -20,6 +20,9 @@
                $post_id = get_the_ID();
                $categories = get_the_category($post_id);
                $category_name = !empty($categories) ? $categories[0]->name : 'Uncategorized';
+               $category_link = !empty($categories)
+                  ? get_category_link($categories[0]->term_id)
+                  : '#';
                $author_name = get_the_author_meta('display_name', get_the_author_meta('ID'));
                $post_link = get_permalink($post_id);
                $post_title = get_the_title($post_id);
@@ -36,13 +39,13 @@
          ?>
                <article class="hero__slide swiper-slide">
                   <div class="hero__entry-image"
-                     style="background-image: url('<?php echo esc_url($thumbnail); ?>">
+                     style="background-image: url('<?php echo esc_url($thumbnail); ?>')">
                   </div>
                   <div class="hero__entry-text">
                      <div class="hero__entry-text-inner">
                         <div class="hero__entry-meta">
                            <span class="cat-links">
-                              <a href="<?php echo esc_url(get_category_link($categories[0]->term_id ?? 0)); ?>"><?php echo esc_html($category_name); ?></a>
+                              <a href="<?php echo esc_url($category_link); ?>"><?php echo esc_html($category_name); ?></a>
                            </span>
                         </div>
                         <h2 class="hero__entry-title">
@@ -51,7 +54,7 @@
                            </a>
                         </h2>
                         <p class="hero__entry-desc"><?php echo esc_html($post_excerpt); ?></p>
-                        <a class="hero__more-link" href="single-standard.html">Read More</a>
+                        <a class="hero__more-link" href="<?php echo esc_url($post_link); ?>">Read More</a>
                      </div>
                   </div>
                </article>
