@@ -6,6 +6,7 @@ PRD.md
 /plugins/hello.php
 /plugins/wp-dummy-content-generator/*
 /plugins/regenerate-thumbnails/*
+/plugins/contact-form-7/*
 /themes/twentytwentytwo
 /themes/twentytwentythree
 /themes/twentytwentyfour
