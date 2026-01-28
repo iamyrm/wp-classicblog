@@ -5,6 +5,7 @@ PRD.md
 /plugins/akismet
 /plugins/hello.php
 /plugins/wp-dummy-content-generator/*
+/plugins/regenerate-thumbnails/*
 /themes/twentytwentytwo
 /themes/twentytwentythree
 /themes/twentytwentyfour
