@@ -11,7 +11,7 @@
 
    <?php get_template_part('parts/preloader'); ?>
 
-   <div id="page" class="s-pagewrap ss-home">
+   <div id="page" class="s-pagewrap <?php echo (is_home() || is_front_page()) ? 'ss-home' : ''; ?>">
 
       <header id="masthead" class="s-header">
 
