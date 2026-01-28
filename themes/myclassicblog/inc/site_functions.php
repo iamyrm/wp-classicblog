@@ -26,6 +26,10 @@ function ya_myclassicblog_setup()
    register_nav_menus(array('header_menu' => esc_html__('Main Menu', 'ya_myclassicblog')));
    register_nav_menus(array('footer_menu_1' => esc_html__('Footer Menu 1', 'ya_myclassicblog')));
    register_nav_menus(array('footer_menu_2' => esc_html__('Footer Menu 2', 'ya_myclassicblog')));
+
+   // Custom Thumbnail size
+   add_image_size('blog-thumb', 370, 480, false);
+   add_image_size('hero-thumb', 760, 815, false);
 }
 
 // Adding header meta tag codes
@@ -59,8 +63,8 @@ function ya_header_footer_codes()
    wp_enqueue_script('ya_main', get_template_directory_uri() . '/assets/js/main.js', array(), SITE_VERSION, true);
 
    wp_enqueue_script('subscription-ajax', get_template_directory_uri() . '/assets/js/subscription.js', array('jquery'), '1.0', true);
-    wp_localize_script('subscription-ajax', 'subscription_ajax', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('subscribe_ajax_nonce')
-    ));
+   wp_localize_script('subscription-ajax', 'subscription_ajax', array(
+      'ajax_url' => admin_url('admin-ajax.php'),
+      'nonce' => wp_create_nonce('subscribe_ajax_nonce')
+   ));
 }
